@@ -20,12 +20,14 @@ h1 {
 	font-size: 42px;
 	font-weight: bold;
 	color: white;
+	text-shadow: 2px 2px 1px black;
 }
 
 #tagline {
 	margin: 0 0 20px 20px;
 	color: #eee;
 	font-style: italic;
+	text-shadow: 1px 1px 1px black;
 }
 
 #options {
@@ -49,8 +51,8 @@ h1 {
 #jswarning {
 	padding: 50px;
 	background-color: #ffff6f;
-	font-size: 24px;
-	line-height: 28px;
+	font-size: 20px;
+	line-height: 24px;
 	font-weight: bold;
 }
 
@@ -61,6 +63,7 @@ h1 {
 	border: solid 1px #ccc;
 	border-top-width: 0;
 	border-radius: 0 0 20px 20px;
+	box-shadow: 0px 1px 10px black;
 }
 
 #ipsum p {
@@ -70,9 +73,22 @@ h1 {
 	line-height: 20px;
 }
 
+#social {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+#social iframe.fb_ltr {
+	margin-top: -5px;
+}
+
+#social iframe.twitter-share-button {
+	padding-left: 30px;
+}
+
 #credits {
 	width: 300px;
-	margin: 0 auto 25px auto;
+	margin: 0 auto 50px auto;
 	text-align: center;
 	color: #eee;
 	font-size: 12px;
@@ -80,6 +96,10 @@ h1 {
 }
 
 #credits a:link {
+	color: #eee;
+}
+
+#credits a:visited {
 	color: #eee;
 }
 

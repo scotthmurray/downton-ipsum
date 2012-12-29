@@ -12,10 +12,20 @@
 </head>
 <body>
 
+<!-- Facebook JS SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <div id="wrapper">
 
-	<h1>Downtown Ipsum</h1>
+	<h1>Downton Ipsum</h1>
 	
 	<p id="tagline">A Downton Abbey-inspired lorem ipsum text generator</p>
 	
@@ -31,16 +41,35 @@
 	</div>
 	
 	<div id="jswarning">
-		Oh, dear. This isn&rsquo;t working. Please activate JavaScript in your browser to generate Downton Ipsum.
+		Oh, dear. This is taking a minute, or isn&rsquo;t working. Please activate JavaScript in your browser and try again.
 	</div>
 	
 	<div id="ipsum"></div>
 	
+	<div id="social">
+	
+		<!-- Facebook -->
+		<div class="fb-like" data-href="http://downtonipsum.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="light"></div>
+	
+		<!-- Tweet -->
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://downtonipsum.com/" data-via="downtonipsum" data-related="alignedleft" data-lang="en">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+		<!-- Follow -->
+		<a href="https://twitter.com/downtonipsum" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @downtonipsum</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+	</div>
+	
 	<div id="credits">
-		<p>Made with <a href="http://d3js.org/">D3</a> and <a href="https://github.com/mbostock/queue">queue.js</a>.<br/>
-		Source and web hosting by <a href="http://">Github</a>.<br/>
-		Data from Wikipedia and…<br/>
-		Inspired by a conversation with Rob Jenkins.</p>
+		<p>
+			Created by <a href="http://alignedleft.com/">Scott Murray</a>.<br/>
+			Made with <a href="http://d3js.org/">D3</a> and <a href="https://github.com/mbostock/queue">queue.js</a>.<br/>
+			Source and web hosting by <a href="https://github.com/alignedleft/downton-ipsum">Github</a>.<br/>
+			Data from <a href="http://en.wikipedia.org/wiki/Downton_abbey">Wikipedia</a> and <a href="http://downtonabbeyquotes.blogspot.com">Downton Abbey Quotes</a>.<br/>
+			Concept developed with Rob Jenkins.<br/>
+			Version 0.5
+		</p>
 	</div>
 
 </div>
