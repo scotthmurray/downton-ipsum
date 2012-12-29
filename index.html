@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Downton Ipsum ~ A Downton Abbey-style lorem ipsum text generator</title>
+	<title>Downton Ipsum ~ A Downton Abbey-inspired lorem ipsum text generator</title>
 
-	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/d3.min.js"></script>
 	<script src="js/queue.min.js"></script>
@@ -13,14 +13,37 @@
 <body>
 
 
+<div id="wrapper">
 
-<h1>Downtown Ipsum</h1>
+	<h1>Downtown Ipsum</h1>
+	
+	<p id="tagline">A Downton Abbey-inspired lorem ipsum text generator</p>
+	
+	<div id="options">
+		<div class="control">
+			<span class="numParagraphs"></span><br/>
+			<input type="range" min="1" max="10" step="1" class="numParagraphs">
+		</div>
+		<div class="control">
+			<span class="numSentences"></span><br/>
+			<input type="range" min="1" max="10" step="1" class="numSentences">
+		</div>
+	</div>
+	
+	<div id="jswarning">
+		Oh, dear. This isn&rsquo;t working. Please activate JavaScript in your browser to generate Downton Ipsum.
+	</div>
+	
+	<div id="ipsum"></div>
+	
+	<div id="credits">
+		<p>Made with <a href="http://d3js.org/">D3</a> and <a href="https://github.com/mbostock/queue">queue.js</a>.<br/>
+		Source and web hosting by <a href="http://">Github</a>.<br/>
+		Data from Wikipedia and…<br/>
+		Inspired by a conversation with Rob Jenkins.</p>
+	</div>
 
-<p>A Downton Abbey-style lorem ipsum text generator</p>
-
-<hr>
-
-<div id="ipsum"></div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Mrs Eaves", Caslon, Didot, Baskerville, Times, serif;
+	background-color: #353a5e;
+	border-top: 40px dashed white;
+}
+
+#wrapper {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	margin: 50px 20px 10px 20px;
+	font-size: 42px;
+	font-weight: bold;
+	color: white;
+}
+
+#tagline {
+	margin: 0 0 20px 20px;
+	color: #eee;
+	font-style: italic;
+}
+
+#options {
+	background-color: #eee;
+	padding: 15px 15px 10px 15px;
+	border: solid 1px #ccc;
+	border-radius: 20px 20px 0px 0px;
+}
+
+#options .control {
+	display: inline-block;
+	width: 280px;
+	text-align: center;
+}
+
+#options .control input {
+	margin-top: 10px;
+	width: 200px;
+}
+
+#jswarning {
+	padding: 50px;
+	background-color: #ffff6f;
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: bold;
+}
+
+#ipsum {
+	margin-bottom: 25px;
+	background-color: white;
+	padding: 20px;
+	border: solid 1px #ccc;
+	border-top-width: 0;
+	border-radius: 0 0 20px 20px;
+}
+
+#ipsum p {
+	margin: 25px;
+	color: #333;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+#credits {
+	width: 300px;
+	margin: 0 auto 25px auto;
+	text-align: center;
+	color: #eee;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#credits a:link {
+	color: #eee;
+}
+
+#credits a:hover {
+	color: #d78bff;
+}
+
+#credits a:active {
+	color: red;
+}
+
+
+
+
+
+
+

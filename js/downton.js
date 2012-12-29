@@ -1,7 +1,17 @@
 
-
-
 var Data = {};
+
+var numParagraphs = 3;
+var numSentences = 5;
+
+var phraseTypes = [
+	[ "people", "directobjectverbs", "objects" ],
+	[ "people", "speakingverbs", "quotations" ],
+	[ "quotations", "speakingverbs", "people" ],
+	[ "objects", "directobjectverbs", "objects" ]
+];
+
+var numbers = [ "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" ];
 
 
 
@@ -17,8 +27,10 @@ queue()
 
 function ready(error, adjectives, directobjectverbs, objects, quotations, speakingverbs, people) {
 	if (error) {
-		alert("Ack, there was an error!");		
+		d3.select("#ipsum").text("Oh, my, there has been an error! There shall be no Downton Ipsum today.");		
 	} else {
+
+		d3.select("#jswarning").remove();
 
 		//Split text files at line breaks to make arrays
 		Data.adjectives = adjectives.split('\n');
@@ -26,9 +38,30 @@ function ready(error, adjectives, directobjectverbs, objects, quotations, speaki
 		Data.objects = objects.split('\n');
 		Data.quotations = quotations.split('\n');
 		Data.speakingverbs = speakingverbs.split('\n');
-		
-		Data.people = people;
 
+		Data.people = people;
+		
+		//Interactivity
+		d3.select("input.numSentences")
+			.attr("value", numSentences)
+			.on("change", function() {
+				numSentences = this.value;
+				updateSpans();
+				generateIpsum();
+			});
+
+		d3.select("input.numParagraphs")
+			.attr("value", numParagraphs)
+			.on("change", function() {
+				numParagraphs = this.value;
+				updateSpans();
+				generateIpsum();
+			});
+		
+		//Fill values
+		updateSpans();
+
+		//Make the ipsum
 		generateIpsum();
 		
 	}
@@ -36,15 +69,27 @@ function ready(error, adjectives, directobjectverbs, objects, quotations, speaki
 
 
 
-var numParagraphs = 3;
-var numSentences = 7;
+var updateSpans = function() {
 
-var phraseTypes = [
-	[ "people", "directobjectverbs", "objects" ],
-	[ "people", "speakingverbs", "quotations" ],
-	[ "quotations", "speakingverbs", "people" ],
-	[ "objects", "directobjectverbs", "objects" ]
-];
+	//numParagraphs
+	d3.select("span.numParagraphs").text(function() {
+		if (numParagraphs == 1) {
+			return numbers[numParagraphs] + " paragraph";
+		} else {
+			return numbers[numParagraphs] + " paragraphs";
+		}
+	});
+	
+	//numSentences
+	d3.select("span.numSentences").text(function() {
+		if (numSentences == 1) {
+			return numbers[numSentences] + " sentence each";
+		} else {
+			return numbers[numSentences] + " sentences each";
+		}
+	});
+	
+};
 
 
 
