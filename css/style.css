@@ -63,6 +63,7 @@ h1 {
 }
 
 #ipsum {
+	float: left;
 	margin-bottom: 25px;
 	background-color: white;
 	padding: 20px;
