@@ -45,6 +45,7 @@ function ready(error, adjectives, directobjectverbs, objects, quotations, speaki
 		d3.select("input.numSentences")
 			.attr("value", numSentences)
 			.on("change", function() {
+				deselectText();
 				numSentences = this.value;
 				updateSpans();
 				generateIpsum();
@@ -53,6 +54,7 @@ function ready(error, adjectives, directobjectverbs, objects, quotations, speaki
 		d3.select("input.numParagraphs")
 			.attr("value", numParagraphs)
 			.on("change", function() {
+				deselectText();
 				numParagraphs = this.value;
 				updateSpans();
 				generateIpsum();
@@ -240,8 +242,18 @@ var selectText = function(element) {
 
 
 
-
-
+// Code adapted from: http://help.dottoro.com/ljigixkc.php
+var deselectText = function() {
+	if (window.getSelection) {  // All browsers, except <= IE8
+		var selection = window.getSelection();                                        
+		selection.removeAllRanges();
+	} else {
+		if (document.selection.createRange) { // <= IE8
+			var range = document.selection.createRange ();
+			document.selection.empty ();
+		}
+	}
+};
 
 
 
