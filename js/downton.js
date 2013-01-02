@@ -58,6 +58,10 @@ function ready(error, adjectives, directobjectverbs, objects, quotations, speaki
 				generateIpsum();
 			});
 		
+		d3.select("#ipsum").on("click", function() {
+			selectText("ipsum");
+		});
+		
 		//Fill values
 		updateSpans();
 
@@ -212,11 +216,27 @@ var lookupName = function() {
 
 
 
+// Code adapted from: http://stackoverflow.com/a/987376
+var selectText = function(element) {
 
+	var doc = document,
+		text = doc.getElementById(element),
+		range,
+		selection;
 
-
-
-
+	if (doc.body.createTextRange) { //ms
+		range = doc.body.createTextRange();
+		range.moveToElementText(text);
+		range.select();
+	} else if (window.getSelection) { //all others
+		selection = window.getSelection();
+		range = doc.createRange();
+		range.selectNodeContents(text);
+		selection.removeAllRanges();
+		selection.addRange(range);
+	}
+	
+};
 
 
 
