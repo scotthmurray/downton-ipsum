@@ -73,9 +73,12 @@ h1 {
 	box-shadow: 0px 1px 7px #333;
 }
 
-#ipsum ::-moz-selection,
+#ipsum ::-moz-selection {
+	background: rgb(206, 105, 255);
+}
+
 #ipsum ::selection {
-	background: #d78bff;
+	background: rgb(206, 105, 255);
 }
 
 #ipsum p {
